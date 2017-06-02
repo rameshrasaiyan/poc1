@@ -1,4 +1,27 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+
+<div class="container-fluid">
+<div class="row" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="col col-sm-2">
+  <div class="card" *ngFor="let hero of heroes">
+    <div class="card-header" role="tab" id="headingOne">
+      <h5 class="mb-0">
+        <a routerLink="{{hero.name}}" >
+          {{hero.name}}
+        </a>
+        <a data-toggle="collapse" data-parent="#accordion" href="#{{hero.name}}" aria-expanded="true" aria-controls="collapseOne">
+          arrow
+        </a>
+        <div id="{{hero.name}}" class="collapse hide" role="tabpanel" aria-labelledby="headingOne">
+          <div class="card-block" *ngFor="let h of hero.child">
+            {{h.name}}
+          </div>
+        </div>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <div class="col col-sm-6">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+</div>
