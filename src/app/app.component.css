@@ -1,0 +1,61 @@
+/* Create a series of empty pseudo-elements... */
+html:before,html:after,body:before,body:after{
+    content:"";
+    background:#EAECEE;
+    position:fixed;
+    display:block;
+    z-index:5;
+}
+
+/* ...and position them! */
+html:before{
+    height:15px;
+    left:0;
+    right:0;
+    top:0;
+}
+html:after{
+    width:15px;
+    top:0;
+    right:0;
+    bottom:0;
+}
+body:before{
+    height:15px;
+    right:0;
+    bottom:0;
+    left:0;
+}
+body:after{
+    width:15px;
+    top:0;
+    bottom:0;
+    left:0;
+}
+.container{
+width: 100%;
+}
+.col-sm-3{
+  width:100%;
+  padding-top:15%;
+  padding-bottom:15%;
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: lightgrey;;
+  }
+.card{
+  border: none;
+  height: auto;
+  width: auto;
+  outline-width:none;
+  }
+
+.card-header{
+  height: 100%;
+  width: auto;
+  background-color:#979A9A;
+  }
+.mb-0{
+  text-align:justify;
+  font-size: 20px;
+  }

@@ -1,0 +1,8 @@
+[
+  {  "name": "Dashboard" },
+  {  "name": "Tenants" },
+  {  "name": "Property_Owners" ,"child":[{"name":"View Owner"}, {"name":"Add New Owner"}]},
+  {  "name": "Manage Properties" },
+  {  "name": "Manage Expenses" },
+  {  "name": "Admin" }
+]

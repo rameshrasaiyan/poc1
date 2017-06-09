@@ -1,22 +1,27 @@
-
-<div class="container-fluid">
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+<header style="text-align:center"></header>
+<div >
+<div class="container" >
 <div class="row" id="accordion" role="tablist" aria-multiselectable="true">
-<div class="col col-sm-2">
-  <div class="card" *ngFor="let hero of heroes">
-    <div class="card-header" role="tab" id="headingOne">
-      <h5 class="mb-0">
-        <a routerLink="{{hero.name}}" >
-          {{hero.name}}
+<div class="col col-sm-3">
+  <div class="card" *ngFor="let menu of menus">
+    <div class="card-header" role="tab" id="heading" >
+      <h5 class="mb-0" >
+        <a routerLink="{{menu.name}}" style="text-decoration:none">
         </a>
-        <a data-toggle="collapse" data-parent="#accordion" href="#{{hero.name}}" aria-expanded="true" aria-controls="collapseOne">
-          arrow
+        <a data-toggle="collapse" style="text-decoration:none" data-parent="#accordion" href="#{{menu.name}}" aria-expanded="true" aria-controls="collapseOne">
+        <font color="black"> {{menu.name}}</font>
         </a>
-        <div id="{{hero.name}}" class="collapse hide" role="tabpanel" aria-labelledby="headingOne">
-          <div class="card-block" *ngFor="let h of hero.child">
-            {{h.name}}
+        <div id="{{menu.name}}" class="collapse hide" role="tabpanel" aria-labelledby="heading" >
+          <div class="card-block" *ngFor="let h of menu.child" ><hr>
+          <a href="#"> <font color="black"> {{h.name}}</font> </a>
           </div>
         </div>
-        </h5>
+      </h5>
       </div>
     </div>
   </div>
@@ -25,3 +30,6 @@
   </div>
 </div>
 </div>
+</div>
+</body>
+</html>

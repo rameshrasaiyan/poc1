@@ -1,21 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-
-const Heroes = [
-{name:'Dashboard',
-  child:[{name:'home'}, {name:'about'}]},
-{name:'Tenants'},
-{name:'POs'},
-{name:'Admin'}
-];
+import {MenuService} from './menu.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
-
 })
 
-export class AppComponent {
-title = 'trackme';
-  heroes = Heroes;
+export class AppComponent implements OnInit {
+  public menus;
+  constructor(private _ms: MenuService) { }
+
+ngOnInit()
+{
+   this.getMenus();
+ }
+
+ getMenus()
+ {
+    this._ms.getMenus().subscribe(
+       data => { this.menus = data},
+       err => console.error(err),
+     );
+ }
 }
